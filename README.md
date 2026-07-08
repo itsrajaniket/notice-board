@@ -32,8 +32,7 @@ This project is a full-stack web application designed for broadcasting announcem
 ## Live demo & visuals
 **Live demo:** [https://notice-board-tau-seven.vercel.app/](https://notice-board-tau-seven.vercel.app/)
 
-![Dashboard Placeholder](./screenshots/dashboard.png)
-*(Note: Please replace the placeholder above with an actual screenshot of your live application)*
+![Notice Board Dashboard](./public/reno_img.jpeg)
 
 ## Tech stack & choices
 
