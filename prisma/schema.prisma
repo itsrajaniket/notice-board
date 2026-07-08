@@ -10,12 +10,20 @@ datasource db {
 enum Category {
   Exam
   Event
+  Meeting
+  Maintenance
+  Holiday
+  Alert
+  News
   General
 }
 
 enum Priority {
+  Low
   Normal
+  High
   Urgent
+  Critical
 }
 
 model Notice {

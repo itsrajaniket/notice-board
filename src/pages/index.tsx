@@ -56,8 +56,17 @@ export default function Home() {
     switch (category) {
       case 'Exam': return 'bg-purple-100 text-purple-700 border-purple-200';
       case 'Event': return 'bg-emerald-100 text-emerald-700 border-emerald-200';
+      case 'Meeting': return 'bg-teal-100 text-teal-700 border-teal-200';
+      case 'Maintenance': return 'bg-amber-100 text-amber-700 border-amber-200';
+      case 'Holiday': return 'bg-pink-100 text-pink-700 border-pink-200';
+      case 'Alert': return 'bg-orange-100 text-orange-700 border-orange-200';
+      case 'News': return 'bg-indigo-100 text-indigo-700 border-indigo-200';
       default: return 'bg-blue-100 text-blue-700 border-blue-200';
     }
+  };
+
+  const isHighPriority = (priority: string) => {
+    return ['High', 'Urgent', 'Critical'].includes(priority);
   };
 
   return (
@@ -99,14 +108,17 @@ export default function Home() {
               <div 
                 key={notice.id} 
                 className={`relative flex flex-col bg-white rounded-2xl border transition-all duration-200 hover:shadow-lg hover:-translate-y-1 group overflow-hidden ${
-                  notice.priority === 'Urgent' ? 'border-red-200 ring-1 ring-red-100 shadow-sm shadow-red-100/50' : 'border-slate-200 shadow-sm'
+                  isHighPriority(notice.priority) ? 'border-red-200 ring-1 ring-red-100 shadow-sm shadow-red-100/50' : 'border-slate-200 shadow-sm'
                 }`}
               >
-                {/* Urgent Banner */}
-                {notice.priority === 'Urgent' && (
-                  <div className="bg-red-500 text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 flex items-center justify-center gap-1.5 shadow-sm">
+                {/* Priority Banner */}
+                {isHighPriority(notice.priority) && (
+                  <div className={`text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 flex items-center justify-center gap-1.5 shadow-sm ${
+                    notice.priority === 'Critical' ? 'bg-red-600' :
+                    notice.priority === 'Urgent' ? 'bg-red-500' : 'bg-orange-500'
+                  }`}>
                     <AlertCircle size={14} />
-                    Urgent Notice
+                    {notice.priority} Notice
                   </div>
                 )}
 
