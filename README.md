@@ -3,7 +3,7 @@
 A production-ready Notice Board built with Next.js (Pages Router), Prisma, TiDB Cloud, and Tailwind CSS.
 
 ## Features
-- **CRUD Operations**: Create, read, update, and delete notices.
+- **CRUD Operations**: Create, read, update, and delete notices .
 - **Urgent First**: Notices are ordered with `Urgent` priority appearing first.
 - **Server-Side Validation**: Robust validation in API routes to prevent bad data.
 - **Responsive Design**: Beautiful UI powered by Tailwind CSS, responsive on mobile and desktop viewports.
