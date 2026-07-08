@@ -45,6 +45,7 @@ This project is a full-stack web application designed for broadcasting announcem
 | Tailwind CSS | 4.x | Styling | Utility-first CSS framework that removes the need for context-switching to CSS files, dramatically speeding up UI iteration. |
 | date-fns | 4.4.0 | Utilities | Lightweight date manipulation library that provides necessary formatting functions without the heavy bundle size of Moment.js. |
 | lucide-react | 1.23.0 | Assets | Clean, customizable SVG icons that bundle efficiently via tree-shaking. |
+| next-themes | 0.4.4 | Utilities | Prevents Next.js hydration mismatch while providing seamless light/dark mode toggling. |
 
 ## Core features
 
@@ -56,6 +57,10 @@ This project is a full-stack web application designed for broadcasting announcem
 - **What it does:** Enforces database-level sorting where `Urgent` notices explicitly bypass chronological ordering to appear at the top of the feed.
 - **User experience:** When viewing the board, critical alerts immediately catch the eye with distinct red styling and top placement.
   - Distinct visual badges for category types (Exam, Event, General).
+
+### Premium UI & dark mode ⭐
+- **What it does:** Provides a stunning glassmorphism interface with a fully integrated, seamless light/dark mode toggle.
+- **User experience:** Users enjoy smooth micro-animations, physics-based hover lifts, and rich neon gradients for urgent notices, without any page flickering when switching themes.
 
 ### Server-side validation
 - **What it does:** Intercepts incoming API payloads and strictly validates data types, required fields, and enum bounds before attempting database transactions.
@@ -165,8 +170,12 @@ The most common areas a developer will modify:
   enum Category {
     Exam
     Event
+    Meeting
+    Maintenance
+    Holiday
+    Alert
+    News
     General
-    Maintenance  // <-- New category
   }
   ```
 
@@ -201,6 +210,7 @@ The most common areas a developer will modify:
 ## Future roadmap
 - [x] Create core CRUD functionality
 - [x] Implement database-level priority sorting
+- [x] Implement premium dark mode UI and glassmorphism styling
 - [ ] Add user authentication (e.g., NextAuth) to restrict creation and deletion to admins
 - [ ] Implement cloud storage (e.g., AWS S3 or Cloudinary) for direct image uploads
 - [ ] Add pagination or infinite scrolling for the main feed
